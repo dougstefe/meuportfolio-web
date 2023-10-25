@@ -1,0 +1,53 @@
+<div class="page">
+    <div class="header">
+        <div *ngIf="user$ | async as user; else titleLoading" class="title">
+            <h1>
+                {{user.fullName}}
+            </h1>
+            <h2>
+                {{user.title}}
+            </h2>
+        </div>
+        <div *ngIf="user$ | async as user; else titleLoading" class="photo">
+            <img src='data:image/png;base64, {{user.photo}}' width="80px">
+        </div>
+    </div>
+    
+    <div class="body">
+        <div *ngIf="user$ | async as user; else titleLoading" class="about">
+            <p [innerHtml]="user.about"></p>
+        </div>
+
+        <section *ngIf="user$ | async as user; else titleLoading">
+            <h2>Competências</h2>
+            <div class="skills">
+                <img *ngFor="let skill of user.skills" src="data:image/png;base64, {{skill.ico}}" alt="{{skill.name}}" title="{{skill.name}}" width="50px" />
+            </div>
+        </section>
+
+        <section *ngIf="user$ | async as user; else titleLoading">
+            <h2>Experiências</h2>
+            <div *ngFor="let experience of user.experiences; let i = index" class="xp {{i % 2 > 0 ? 'odd' : 'even'}}">
+                <div class="container">
+                    <div>
+                        <h4>{{experience.title}}</h4>
+                        <h4>{{experience.company}}</h4>
+                        <p>{{experience.startDate | date: 'dd/MM/yyyy'}}</p>
+                        <p>{{experience.endDate | date: 'dd/MM/yyyy'}}</p>
+                    </div>
+                    <div>
+                        <p [innerHtml]="experience.description"></p>
+                    </div>
+                </div>
+                <hr *ngIf="i < (user.experiences.length - 1)"/>
+            </div>
+        </section>
+    </div>
+    
+    <div class="footer"></div>
+</div>
+
+
+<ng-template #titleLoading>
+    <h3>Carregando...</h3>
+</ng-template>

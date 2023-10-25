@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+      @apply text-2xl;
+      @apply font-black;
+    }
+    h2 {
+      @apply text-xl;
+      @apply font-extrabold;
+    }
+    h3 {
+      @apply text-lg;
+      @apply font-bold;
+    }
+    h4 {
+      @apply text-base;
+      @apply font-semibold;
+    }
+    
+  }
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2d2727;
+    color: antiquewhite;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+input[type="color"],
+input[type="file"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+    color: #656565;
+    background-color: white;
+    padding: 16px 18px;
+}
+
+dialog {
+  .content {
+    background-color: #2d2727;
+    color: antiquewhite;
+  }
+}

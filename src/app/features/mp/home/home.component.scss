@@ -1,0 +1,28 @@
+input[type="text"] {
+    background-color: unset;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.padding-left-unset {
+    padding-left: unset;
+}
+
+span {
+    color: #818181;
+    background-color: unsets;
+}
+
+img.crop {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items:start;
+}

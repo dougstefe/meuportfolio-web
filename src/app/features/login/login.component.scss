@@ -1,0 +1,35 @@
+input[type="email"], 
+input[type="password"] {
+    background-color: white;
+    padding: 16px 18px;
+}
+
+p.input-error-message{
+    bottom: -11px;
+    right: 20px;
+}
+
+section.login{
+    margin: 60px 100px 100px;
+    max-width: 425px;
+    hr{
+        margin: 50px 0;
+    }
+    form{
+        .row{
+            margin-bottom: 30px;
+        }
+        .form-actions{
+            margin-top: 60px;
+            .btn{
+                width: 100%;
+                max-width: 475px;
+                margin: 0 auto;
+                padding: 11px;
+                &:first-of-type{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
