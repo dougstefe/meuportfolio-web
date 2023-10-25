@@ -1,0 +1,15 @@
+<div class="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+    <div class="grid py-24 place-items-center">
+        <div *ngIf="(accountConfirmation$ | async) as confirmation; else waitConfirmation">
+            <h3 *ngIf="confirmation.confirmated; else invalid">Conta validada com sucesso.</h3>
+            <ng-template #invalid>
+                    <h3>Conta inválida.</h3>
+                    <p *ngIf="confirmation.message">{{confirmation.message}}</p>
+            </ng-template>
+        </div>
+        <ng-template #waitConfirmation>
+            <h3>Confirmando conta, aguarde...</h3>
+        </ng-template>
+    </div>
+</div>
+ 
